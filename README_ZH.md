@@ -25,3 +25,5 @@ python scripts/mirror.py --verify-only
 无需额外配置 Secrets。仓库策略须允许 Actions 提交到 `main` 并部署到 Pages。
 
 每天 **UTC 00:00 / 北京时间 08:00** 自动同步，也支持代码推送到 `main` 或手动触发。下载失败时保留旧快照。
+
+同步后，以 ZIP 备注日期（如 `260914`）命名 GitHub Release，将整个 `public/` 打包为 `260914.zip`。同一日期只发布一次。本地打包：`python -m scripts.package_release`。

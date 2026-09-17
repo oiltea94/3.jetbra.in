@@ -23,6 +23,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    outputs:
+      snapshot_commit: ${{ steps.snapshot.outputs.commit }}
     permissions:
       contents: write
       pages: read
@@ -49,6 +51,7 @@ jobs:
       - name: Verify deployment files
         run: python scripts/mirror.py --verify-only
       - name: Commit changed snapshot
+        id: snapshot
         shell: bash
         run: |
           set -euo pipefail
@@ -63,10 +66,34 @@ jobs:
           else
             echo 'Upstream snapshot is unchanged.' >> "$GITHUB_STEP_SUMMARY"
           fi
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public/
           retention-days: 7
+
+  release:
+    needs: sync
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.sync.outputs.snapshot_commit }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Package and publish dated snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SNAPSHOT_COMMIT: ${{ needs.sync.outputs.snapshot_commit }}
+        run: >-
+          python -m scripts.package_release --publish
+          --repository "$GITHUB_REPOSITORY" --target "$SNAPSHOT_COMMIT"
 
   deploy:
     needs: sync

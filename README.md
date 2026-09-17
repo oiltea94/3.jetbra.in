@@ -25,3 +25,5 @@ Open `public/index.html` to preview. Run tests with `python -m pytest -q`.
 No additional secrets are required. Repository policies must allow Actions to commit to `main` and deploy to Pages.
 
 The workflow syncs daily at **00:00 UTC / 08:00 Beijing time**, on code pushes to `main`, or manually. Failed downloads preserve the previous snapshot.
+
+After syncing, the ZIP annotation date (e.g. `260914`) names a GitHub Release with all of `public/` in `260914.zip`. Each date is published once. To package locally: `python -m scripts.package_release`.
