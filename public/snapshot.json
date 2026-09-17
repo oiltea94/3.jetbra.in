@@ -2,7 +2,7 @@
   "generator": "jetbra-static-mirror",
   "schema_version": 1,
   "source": "https://3.jetbra.in/",
-  "captured_at": "2026-09-17T06:18:25+00:00",
+  "captured_at": "2026-09-17T06:54:59+00:00",
   "files": {
     ".nojekyll": {
       "source": null,
@@ -106,8 +106,8 @@
     },
     "index.html": {
       "source": "https://3.jetbra.in/",
-      "bytes": 2399979,
-      "sha256": "25da4eb02432f6f7278d8ab4876522194d05d34e387038a74db3c5590560ca26"
+      "bytes": 2399980,
+      "sha256": "1b0d444f8ebd02d71a5654a71af28cf3de9ab88c0be9c81c13b1cf2c55a1767b"
     },
     "scripts/zepto.min.js": {
       "source": "https://3.jetbra.in/scripts/zepto.min.js",
