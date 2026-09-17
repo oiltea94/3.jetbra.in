@@ -1,0 +1,84 @@
+name: Sync and deploy mirror
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'public/**'
+      - 'docs/**'
+      - 'README*.md'
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mirror-main
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m pytest -q
+      - name: Read GitHub Pages configuration
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Fetch and validate upstream snapshot
+        env:
+          SITE_HOME_URL: ${{ steps.pages.outputs.base_url }}/
+        run: python scripts/mirror.py --home-url "$SITE_HOME_URL"
+      - name: Verify deployment files
+        run: python scripts/mirror.py --verify-only
+      - name: Commit changed snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- public
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore: update upstream static snapshot'
+            # A concurrent human push causes a safe failure, never a force-push.
+            git push origin HEAD:main
+            echo 'Snapshot changed and committed.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Upstream snapshot is unchanged.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+          retention-days: 7
+
+  deploy:
+    needs: sync
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

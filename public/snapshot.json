@@ -1,0 +1,123 @@
+{
+  "generator": "jetbra-static-mirror",
+  "schema_version": 1,
+  "source": "https://3.jetbra.in/",
+  "captured_at": "2026-09-17T06:18:25+00:00",
+  "files": {
+    ".nojekyll": {
+      "source": null,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "404.html": {
+      "source": null,
+      "bytes": 272,
+      "sha256": "403090067454b52c1831886348655b511392d181ea7b296bb2e76dbc8c2b2e59"
+    },
+    "files/jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095.zip": {
+      "source": "https://3.jetbra.in/files/jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095.zip",
+      "bytes": 385759,
+      "sha256": "ddf37f82de3bdf11eb6e96f3828440c141ebb6589a7cc19d5e4587a171f7c2bc"
+    },
+    "images/appcode.svg": {
+      "source": "https://3.jetbra.in/images/appcode.svg?v=1",
+      "bytes": 1723,
+      "sha256": "959b4becee0a31a0012c2eb7ba412e43eada6c080c71ffbd6c5671bc03b84225"
+    },
+    "images/aqua.svg": {
+      "source": "https://3.jetbra.in/images/aqua.svg?v=1",
+      "bytes": 2494,
+      "sha256": "4bc8e4362bfdf43568ac29c4a1fbf6a21db30658bd9d68db13ecc9030dc20b5c"
+    },
+    "images/clion.svg": {
+      "source": "https://3.jetbra.in/images/clion.svg?v=1",
+      "bytes": 2181,
+      "sha256": "b4fbc1a198fb386e57fd387c3e4a3a5be516faf366e83aa9078594131d0bf0d8"
+    },
+    "images/datagrip.svg": {
+      "source": "https://3.jetbra.in/images/datagrip.svg?v=1",
+      "bytes": 2592,
+      "sha256": "518280d4333eb3314dc935c60da2f941873a0a8a94e7ff6d4e15c7c7c061bc1a"
+    },
+    "images/dataspell.svg": {
+      "source": "https://3.jetbra.in/images/dataspell.svg?v=1",
+      "bytes": 2810,
+      "sha256": "55434ffe95a9f0fb744dfc81407421deaa17c65d1ec833ac8ef6eafe54e37fe4"
+    },
+    "images/dotcover.svg": {
+      "source": "https://3.jetbra.in/images/dotcover.svg?v=1",
+      "bytes": 2549,
+      "sha256": "e5409fc399f97635949ac7fef12ae350af6c3b936f3e45b1ace8611de42beeb4"
+    },
+    "images/dotmemory.svg": {
+      "source": "https://3.jetbra.in/images/dotmemory.svg?v=1",
+      "bytes": 2011,
+      "sha256": "7f463db9bb2be07288760bd606321615ffea0882964121955ee17391e1c245ed"
+    },
+    "images/dottrace.svg": {
+      "source": "https://3.jetbra.in/images/dottrace.svg?v=1",
+      "bytes": 1909,
+      "sha256": "1a5a68753ef4a13f915d0a1b457a83a0bf226b655c308684ecb176c7d22e4d6c"
+    },
+    "images/goland.svg": {
+      "source": "https://3.jetbra.in/images/goland.svg?v=1",
+      "bytes": 2876,
+      "sha256": "4d6df58db31b9b3351709fb3a440a8a79930bac3fea08cad49b80295c383f202"
+    },
+    "images/intellij-idea.svg": {
+      "source": "https://3.jetbra.in/images/intellij-idea.svg?v=1",
+      "bytes": 1742,
+      "sha256": "d5ee1c7e8a4ba0d2c886b0c298043e0962791c1cd8e0ad4b67e4f650473f06d1"
+    },
+    "images/phpstorm.svg": {
+      "source": "https://3.jetbra.in/images/phpstorm.svg?v=1",
+      "bytes": 2809,
+      "sha256": "297b10e3df965871ef59fd56a87f90bf36c85cfb34d919e51554b60d4a10d8ab"
+    },
+    "images/plugin.svg": {
+      "source": "https://3.jetbra.in/images/plugin.svg?v=1",
+      "bytes": 453,
+      "sha256": "88ae0097f5a744a8cbda2cd17514328f326e1ddcd28b6861526c29e464d0a9af"
+    },
+    "images/pycharm.svg": {
+      "source": "https://3.jetbra.in/images/pycharm.svg?v=1",
+      "bytes": 2524,
+      "sha256": "755dde5111ef980c1f7aa9005ba8db3ce46ddf7a9bd1d49d35201d3788dface8"
+    },
+    "images/rider.svg": {
+      "source": "https://3.jetbra.in/images/rider.svg?v=1",
+      "bytes": 2279,
+      "sha256": "71a08ce91c9632c759b3e25cadb5d88f668d9ab7b9035c1715e17c33684ed7aa"
+    },
+    "images/rubymine.svg": {
+      "source": "https://3.jetbra.in/images/rubymine.svg?v=1",
+      "bytes": 2037,
+      "sha256": "d6ce2175088cd2b887020f75c7f1fc551662cd15a400ba0dd6993da4cfc07009"
+    },
+    "images/rustrover.svg": {
+      "source": "https://3.jetbra.in/images/rustrover.svg?v=1",
+      "bytes": 2326,
+      "sha256": "82ae1d22f15fec716166d45895375077f435121f38aaff7f02e3e135b63da6a2"
+    },
+    "images/webstorm.svg": {
+      "source": "https://3.jetbra.in/images/webstorm.svg?v=1",
+      "bytes": 2562,
+      "sha256": "a129810b689c5aa6210cff6da3e765b96f0b81632d00df0f9212d87bf6eae531"
+    },
+    "index.html": {
+      "source": "https://3.jetbra.in/",
+      "bytes": 2399979,
+      "sha256": "25da4eb02432f6f7278d8ab4876522194d05d34e387038a74db3c5590560ca26"
+    },
+    "scripts/zepto.min.js": {
+      "source": "https://3.jetbra.in/scripts/zepto.min.js",
+      "bytes": 26386,
+      "sha256": "beb9f5e32ed61fbce010497242a9b6b8219242b5ffc636038e7891510c773725"
+    },
+    "styles/normalize.css": {
+      "source": "https://3.jetbra.in/styles/normalize.css",
+      "bytes": 6138,
+      "sha256": "580818700724d42d7fcc4979b0197971fca1c6d2e0286769237a0ac897df5512"
+    }
+  }
+}
