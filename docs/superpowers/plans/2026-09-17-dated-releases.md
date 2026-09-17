@@ -13,5 +13,10 @@ the GitHub Release title and tag; the attached archive is named DATE.zip.
   interrupted managed drafts can be resumed without replacing published assets.
 - [x] Add a separate release job after sync, checking out the exact snapshot
   commit. Keep Pages deployment independent of release publication failures.
-- [ ] Run tests, inspect a real package, lint the workflow, review, and push.
+- [x] Run tests, inspect a real package, lint the workflow, review, and push.
   Verify an actual GitHub release and a repeated run for the same date.
+
+Validation: 47 tests and actionlint passed. Actions run `35193331435` synced,
+deployed, and published `260914`. The downloaded `260914.zip` contains all 24
+snapshot files with identical bytes. Repeating publication returned `existing`
+and preserved asset ID `569687695` and its SHA-256 digest.
